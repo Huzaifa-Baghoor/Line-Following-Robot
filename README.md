@@ -14,6 +14,12 @@ Starting with the micro controller I've selected **Raspberry Pi Pico RP2040** be
 To talk about the connections, I'd Start with the Power connections. The battery provides 7.4v which goes to VMOT pin of motor driver and buck converter. the buck converter then outputs 5v which goes to VSYS on Pico. Now we have 3 voltages. i.e. 7.4v, 5v and 3.3v. now the 3.3v goes to VCC and STBY pin of TB6612FNG and VCC pin on Sensor Array. 
 Now lets talk about the Data and Logic Signals. The GPIO pins from 0 to 18 will be connected to sensor array and GPIO pins 19,20, 21, 22, 26, 27 will be connected to PWMA, AIN1, AIN2, PWMB, BIN1 and BIN2 respectively.
 At the end the AO1,  AO2 and BO1, BO2 will be connected to left and right motors respectively.
+|Schematics|Tracks|
+| :---: | :---: |
+| ![schemetics](PCB/Images/Schematics.JPG) | ![Tracks](PCB/Images/Tracks.JPG) |
+
+[![3D](PCB/Images/3D.JPG)](PCB/PCB.glb)
+
 
 ## Custom Built Sensor Array
 
@@ -24,6 +30,13 @@ Instead of reading analog voltages, I paired 16 TCRT5000 sensors with 10nF capac
  - If the sensor detects **black surface**, the capacitor discharges **slowly**
 By doing this, I was able to read 16 analog sensors on 16 digital pins.
 To make the array even better, I also integrated two SPDT micro limit switch to use as bump sensors on left and right corners of the PCB. 
+
+|Schematics|Tracks|
+| :---: | :---: |
+| ![schemetics](Sensor%20Array/Images/Schematics.JPG) | ![Tracks](Sensor%20Array/Images/Tracks.JPG) |
+
+[![3D](Sensor%20Array/Images//3D.JPG)](Sensor%20Array/Sensor%20Array.glb)
+
 
 # Bill of Materials (BOM)
 After doing my research, the most affordable components I've got are as follows,
